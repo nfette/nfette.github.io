@@ -1,8 +1,9 @@
 # openACHP
 
-openACHP is a library for optimizing heat-driven cooling system designs.
-It includes some simple cycle and heat exchange models for realistic results.
-Applications include selection of a cooling system and education.
+openACHP is a library for optimizing heat-driven cooling system
+designs. It includes some simple cycle and heat exchange models for
+realistic results. Applications include selection of a cooling system
+and education.
 
 ## To-DO ...
 
@@ -25,4 +26,14 @@ Applications include selection of a cooling system and education.
 * [demo_HRHX_integral](demo_HRHX_integral.html)
 * [show_scipy_optimize_trials](show_scipy_optimize_trials.html)
 
+## Set-up for using the library
+
+Use the environment file to install with conda. See documentation for
+help installing CoolProp in Windows. Some additional packages may be
+useful but are not used by the code:
+
+- pandas
+- beautifulsoup4
+- pandoc
+- TeX environment for nbconvert (see [here](http://nbconvert.readthedocs.io/en/latest/install.html))
 
