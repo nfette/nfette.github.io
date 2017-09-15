@@ -25,6 +25,7 @@ and education.
 * [demo_coolprop_ammonia](demo_coolprop_ammonia.html)
 * [demo_HRHX_integral](demo_HRHX_integral.html)
 * [show_scipy_optimize_trials](show_scipy_optimize_trials.html)
+* [Demo Ammonia1.slides](Demo Ammonia1.slides.html)
 
 ## Set-up for using the library
 
