@@ -11858,7 +11858,9 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="How-to-use-ammonia-aqua-system-model-from-openACHP">How to use ammonia-aqua system model from openACHP<a class="anchor-link" href="#How-to-use-ammonia-aqua-system-model-from-openACHP">&#182;</a></h1>
+<h1 id="How-to-use-ammonia-aqua-system-model-from-openACHP">How to use ammonia-aqua system model from openACHP<a class="anchor-link" href="#How-to-use-ammonia-aqua-system-model-from-openACHP">&#182;</a></h1><p>This Jupyter Notebook is part of the documentation for <a href="https://nfette.github.io/openACHP/">openACHP</a>. It has been exported to <a href="https://nfette.github.io/openACHP/Demo%20Ammonia1.html">HTML</a> and <a href="https://nfette.github.io/openACHP/Demo%20Ammonia1.slides.html#/">reveal.js slides</a>.</p>
+<p>If you are viewing the slides, just type <code>space</code> to advance each slide. Type <code>?</code> to view keyboard shortcuts.</p>
+
 </div>
 </div>
 </div></section><section>
@@ -11891,14 +11893,14 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Boundary">Boundary<a class="anchor-link" href="#Boundary">&#182;</a></h2><p>Now I can create what I call a boundary for the chiller, in other words the specification of available resources, such as flow streams for bringing in or rejecting heat. I'll need that to evaluate heat exchangers later.</p>
+<h2 id="Boundary">Boundary<a class="anchor-link" href="#Boundary">&#182;</a></h2><p>Now I can create what I call a boundary for the chiller, in other words the specification of available resources, such as flow streams for bringing in or rejecting heat. I'll need that to evaluate heat exchangers later. In the output, we can see each of the flow streams defined where it goes into the chiller.</p>
 
 </div>
 </div>
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">T_heat_reject</span> <span class="o">=</span> <span class="mf">305.</span>
@@ -11918,7 +11920,7 @@ a.anchor-link {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[3]:</div>
+<div class="prompt output_prompt">Out[4]:</div>
 
 
 
@@ -11942,16 +11944,7 @@ a.anchor-link {
 </div>
 </div>
 
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>In the output, we can see each of the flow streams defined where it goes into the chiller.</p>
-
-</div>
-</div>
-</div></div></section></section><section><section>
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -11960,19 +11953,10 @@ a.anchor-link {
 
 </div>
 </div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Just for reference, here is a drawing explaining the chiller model...</p>
-
-</div>
-</div>
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">HTML</span><span class="p">,</span> <span class="n">SVG</span>
@@ -12705,14 +12689,14 @@ $("svg:first").click(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Now I'll specify and create a chiller. This is an output from one of my optimization runs, so it is supposed to be the "best" chiller with a total heat exchange inventory of 100 kW/K. The specification I've chosen is based on temperatures at a few key points, which allows me to solve the model procedurally, without an iterative solver.</p>
+<p>Now I'll specify and create a chiller. This specification is an output from one of my optimization runs, so it is supposed to be the "best" chiller with a total heat exchange inventory of 100 kW/K. The specification I've chosen is based on temperatures at a few key points, which allows me to solve the model procedurally, without an iterative solver.</p>
 
 </div>
 </div>
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">xC</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.51284472</span><span class="p">,</span> <span class="mf">277.97717012</span><span class="p">,</span> <span class="mf">312.16427764</span><span class="p">,</span> <span class="mf">313.6952877</span><span class="p">,</span>
@@ -12736,13 +12720,11 @@ $("svg:first").click(function(){
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">table</span> <span class="o">=</span> <span class="n">ch</span><span class="o">.</span><span class="n">getStateTable</span><span class="p">()</span>
 <span class="n">display</span><span class="p">(</span><span class="n">table</span><span class="p">)</span>
-<span class="c1"># This stores the table into the webpage ... now go mouse over the diagram.</span>
-<span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&lt;script&gt;$(&#39;#mydiagramdata&#39;).text(&#39;</span><span class="si">{}</span><span class="s2">&#39;);&lt;/script&gt;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">table</span><span class="o">.</span><span class="n">toJSON</span><span class="p">())))</span>
 </pre></div>
 
 </div>
@@ -12768,36 +12750,24 @@ $("svg:first").click(function(){
 <tr><td>rich_abs_outlet          </td><td style="text-align: right;">310.249</td><td style="text-align: right;"> 4.87444</td><td style="text-align: right;">0.512028</td><td style="text-align: right;"> -73.1846</td><td style="text-align: right;">0.395262</td><td style="text-align: right;"> -73.7844</td><td style="text-align: right;">0.00123041</td><td style="text-align: right;"> 0          </td></tr>
 <tr><td>rich_pump_outlet         </td><td style="text-align: right;">310.413</td><td style="text-align: right;">15.1396 </td><td style="text-align: right;">0.512028</td><td style="text-align: right;"> -71.6061</td><td style="text-align: right;">0.396279</td><td style="text-align: right;"> -73.4682</td><td style="text-align: right;">0.00122993</td><td style="text-align: right;">-0.001      </td></tr>
 <tr><td>rich_shx_outlet          </td><td style="text-align: right;">345.852</td><td style="text-align: right;">15.1396 </td><td style="text-align: right;">0.512028</td><td style="text-align: right;">  89.9885</td><td style="text-align: right;">0.889071</td><td style="text-align: right;">  88.0334</td><td style="text-align: right;">0.00129135</td><td style="text-align: right;">-0.001      </td></tr>
-<tr><td>rich_gen_sat_liquid      </td><td style="text-align: right;">351.934</td><td style="text-align: right;">15.1396 </td><td style="text-align: right;">0.512028</td><td style="text-align: right;"> 118.851 </td><td style="text-align: right;">0.971915</td><td style="text-align: right;"> 116.876 </td><td style="text-align: right;">0.00130438</td><td style="text-align: right;"> 0          </td></tr>
+<tr><td>rich_gen_sat_liquid      </td><td style="text-align: right;">351.91 </td><td style="text-align: right;">15.1396 </td><td style="text-align: right;">0.512028</td><td style="text-align: right;"> 118.322 </td><td style="text-align: right;">0.970284</td><td style="text-align: right;"> 116.346 </td><td style="text-align: right;">0.00130467</td><td style="text-align: right;"> 0          </td></tr>
 <tr><td>weak_gen_outlet          </td><td style="text-align: right;">374.14 </td><td style="text-align: right;">15.1396 </td><td style="text-align: right;">0.39475 </td><td style="text-align: right;"> 225.935 </td><td style="text-align: right;">1.26082 </td><td style="text-align: right;"> 224.014 </td><td style="text-align: right;">0.00126878</td><td style="text-align: right;"> 0          </td></tr>
 <tr><td>weak_shx_outlet          </td><td style="text-align: right;">329.938</td><td style="text-align: right;">15.1396 </td><td style="text-align: right;">0.39475 </td><td style="text-align: right;">  25.493 </td><td style="text-align: right;">0.691038</td><td style="text-align: right;">  23.6904</td><td style="text-align: right;">0.00119066</td><td style="text-align: right;">-0.001      </td></tr>
 <tr><td>weak_exp_outlet          </td><td style="text-align: right;">330.108</td><td style="text-align: right;"> 4.87444</td><td style="text-align: right;">0.39475 </td><td style="text-align: right;">  25.493 </td><td style="text-align: right;">0.694743</td><td style="text-align: right;">  24.911 </td><td style="text-align: right;">0.00119402</td><td style="text-align: right;"> 7.84229e-06</td></tr>
-<tr><td>gen_vapor_outlet         </td><td style="text-align: right;">351.934</td><td style="text-align: right;">15.1396 </td><td style="text-align: right;">0.988129</td><td style="text-align: right;">1424.61  </td><td style="text-align: right;">4.57475 </td><td style="text-align: right;">1268.73  </td><td style="text-align: right;">0.102962  </td><td style="text-align: right;"> 1          </td></tr>
-<tr><td>gen_reflux_inlet         </td><td style="text-align: right;">351.934</td><td style="text-align: right;">15.1396 </td><td style="text-align: right;">0.51188 </td><td style="text-align: right;"> 118.42  </td><td style="text-align: right;">0.970589</td><td style="text-align: right;"> 116.445 </td><td style="text-align: right;">0.00130462</td><td style="text-align: right;"> 0          </td></tr>
+<tr><td>gen_vapor_outlet         </td><td style="text-align: right;">351.91 </td><td style="text-align: right;">15.1396 </td><td style="text-align: right;">0.988148</td><td style="text-align: right;">1424.52  </td><td style="text-align: right;">4.5745  </td><td style="text-align: right;">1268.66  </td><td style="text-align: right;">0.102953  </td><td style="text-align: right;"> 1          </td></tr>
+<tr><td>gen_reflux_inlet         </td><td style="text-align: right;">351.91 </td><td style="text-align: right;">15.1396 </td><td style="text-align: right;">0.512027</td><td style="text-align: right;"> 118.318 </td><td style="text-align: right;">0.970274</td><td style="text-align: right;"> 116.343 </td><td style="text-align: right;">0.00130468</td><td style="text-align: right;"> 0          </td></tr>
 <tr><td>refrig_rect_outlet       </td><td style="text-align: right;">313.695</td><td style="text-align: right;">15.1396 </td><td style="text-align: right;">0.999869</td><td style="text-align: right;">1297.85  </td><td style="text-align: right;">4.19504 </td><td style="text-align: right;">1167.34  </td><td style="text-align: right;">0.0862066 </td><td style="text-align: right;"> 0.999598   </td></tr>
 <tr><td>refrig_cond_outlet       </td><td style="text-align: right;">312.164</td><td style="text-align: right;">15.1396 </td><td style="text-align: right;">0.999869</td><td style="text-align: right;"> 186.035 </td><td style="text-align: right;">0.641824</td><td style="text-align: right;"> 183.419 </td><td style="text-align: right;">0.00172798</td><td style="text-align: right;"> 0          </td></tr>
 <tr><td>refrig_cehx_liquid_outlet</td><td style="text-align: right;">295.029</td><td style="text-align: right;">15.1396 </td><td style="text-align: right;">0.999869</td><td style="text-align: right;"> 102.713 </td><td style="text-align: right;">0.367562</td><td style="text-align: right;"> 100.22  </td><td style="text-align: right;">0.00164681</td><td style="text-align: right;">-0.001      </td></tr>
 <tr><td>refrig_exp_outlet        </td><td style="text-align: right;">276.591</td><td style="text-align: right;"> 4.87444</td><td style="text-align: right;">0.999869</td><td style="text-align: right;"> 102.713 </td><td style="text-align: right;">0.382108</td><td style="text-align: right;">  93.3482</td><td style="text-align: right;">0.0192126 </td><td style="text-align: right;"> 0.069211   </td></tr>
 <tr><td>refrig_evap_outlet       </td><td style="text-align: right;">277.977</td><td style="text-align: right;"> 4.87444</td><td style="text-align: right;">0.999869</td><td style="text-align: right;">1273.03  </td><td style="text-align: right;">4.59441 </td><td style="text-align: right;">1147.43  </td><td style="text-align: right;">0.257979  </td><td style="text-align: right;"> 0.998      </td></tr>
-<tr><td>refrig_cehx_sat_vapor    </td><td style="text-align: right;">283.49 </td><td style="text-align: right;"> 4.87444</td><td style="text-align: right;">0.999869</td><td style="text-align: right;">1276.56  </td><td style="text-align: right;">4.60629 </td><td style="text-align: right;">1150.49  </td><td style="text-align: right;">0.258638  </td><td style="text-align: right;"> 1          </td></tr>
+<tr><td>refrig_cehx_sat_vapor    </td><td style="text-align: right;">283.596</td><td style="text-align: right;"> 4.87444</td><td style="text-align: right;">0.999869</td><td style="text-align: right;">1289.93  </td><td style="text-align: right;">4.65374 </td><td style="text-align: right;">1160.79  </td><td style="text-align: right;">0.264932  </td><td style="text-align: right;"> 1          </td></tr>
 <tr><td>refrig_cehx_vapor_outlet </td><td style="text-align: right;">310.343</td><td style="text-align: right;"> 4.87444</td><td style="text-align: right;">0.999869</td><td style="text-align: right;">1356.35  </td><td style="text-align: right;">4.87695 </td><td style="text-align: right;">1211.83  </td><td style="text-align: right;">0.296502  </td><td style="text-align: right;"> 1.001      </td></tr>
 <tr><td>rectifier_liquid         </td><td style="text-align: right;">313.695</td><td style="text-align: right;">15.1396 </td><td style="text-align: right;">0.957859</td><td style="text-align: right;"> 162.404 </td><td style="text-align: right;">0.668534</td><td style="text-align: right;"> 159.871 </td><td style="text-align: right;">0.00167345</td><td style="text-align: right;"> 0          </td></tr>
 <tr><td>gen_vapor_formation      </td><td style="text-align: right;">374.14 </td><td style="text-align: right;">15.1396 </td><td style="text-align: right;">0.958501</td><td style="text-align: right;">1515.65  </td><td style="text-align: right;">4.8222  </td><td style="text-align: right;">1347.4   </td><td style="text-align: right;">0.111135  </td><td style="text-align: right;"> 1          </td></tr>
 <tr><td>abs_vapor_final          </td><td style="text-align: right;">330.108</td><td style="text-align: right;"> 4.87444</td><td style="text-align: right;">0.982609</td><td style="text-align: right;">1422.49  </td><td style="text-align: right;">5.08428 </td><td style="text-align: right;">1267.55  </td><td style="text-align: right;">0.317852  </td><td style="text-align: right;"> 1          </td></tr>
 </tbody>
 </table>
-</div>
-
-</div>
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<script>$('#mydiagramdata').text('{"rich_abs_outlet": {"T": 310.2485656738281, "P": 4.874439239501953, "x": 0.5120280385017395, "h": -73.18464660644531, "s": 0.3952621519565582, "u": -73.78440856933594, "v": 0.0012304085539653897, "Qu": 0.0}, "rich_pump_outlet": {"T": 310.41302490234375, "P": 15.13962459564209, "x": 0.5120280385017395, "h": -71.60614776611328, "s": 0.3962794840335846, "u": -73.46821594238281, "v": 0.0012299331137910485, "Qu": -0.0010000000474974513}, "rich_shx_outlet": {"T": 345.85235595703125, "P": 15.13962459564209, "x": 0.5120280385017395, "h": 89.9885025024414, "s": 0.8890711069107056, "u": 88.033447265625, "v": 0.0012913474347442389, "Qu": -0.0010000000474974513}, "rich_gen_sat_liquid": {"T": 351.9344482421875, "P": 15.13962459564209, "x": 0.5120280385017395, "h": 118.85088348388672, "s": 0.9719148874282837, "u": 116.87610626220703, "v": 0.001304376870393753, "Qu": 0.0}, "weak_gen_outlet": {"T": 374.14019775390625, "P": 15.13962459564209, "x": 0.39475011825561523, "h": 225.93531799316406, "s": 1.260822057723999, "u": 224.01443481445312, "v": 0.00126877729780972, "Qu": 0.0}, "weak_shx_outlet": {"T": 329.9377136230469, "P": 15.13962459564209, "x": 0.39475011825561523, "h": 25.492998123168945, "s": 0.6910381317138672, "u": 23.690378189086914, "v": 0.0011906634317710996, "Qu": -0.0010000000474974513}, "weak_exp_outlet": {"T": 330.1083068847656, "P": 4.874439239501953, "x": 0.39475011825561523, "h": 25.492998123168945, "s": 0.6947431564331055, "u": 24.910980224609375, "v": 0.0011940202675759792, "Qu": 7.842289051041007e-06}, "gen_vapor_outlet": {"T": 351.9344482421875, "P": 15.13962459564209, "x": 0.9881288409233093, "h": 1424.6104736328125, "s": 4.574749946594238, "u": 1268.7291259765625, "v": 0.10296248644590378, "Qu": 1.0}, "gen_reflux_inlet": {"T": 351.9344482421875, "P": 15.13962459564209, "x": 0.5118797421455383, "h": 118.42029571533203, "s": 0.9705886244773865, "u": 116.44515228271484, "v": 0.0013046187814325094, "Qu": 0.0}, "refrig_rect_outlet": {"T": 313.6952819824219, "P": 15.13962459564209, "x": 0.9998689889907837, "h": 1297.851806640625, "s": 4.195043563842773, "u": 1167.33837890625, "v": 0.08620655536651611, "Qu": 0.9995977282524109}, "refrig_cond_outlet": {"T": 312.1642761230469, "P": 15.13962459564209, "x": 0.9998689889907837, "h": 186.0347137451172, "s": 0.6418237090110779, "u": 183.4185028076172, "v": 0.001727982540614903, "Qu": 0.0}, "refrig_cehx_liquid_outlet": {"T": 295.02850341796875, "P": 15.13962459564209, "x": 0.9998689889907837, "h": 102.7132339477539, "s": 0.36756229400634766, "u": 100.22002410888672, "v": 0.0016468141693621874, "Qu": -0.0010000000474974513}, "refrig_exp_outlet": {"T": 276.59088134765625, "P": 4.874439239501953, "x": 0.9998689889907837, "h": 102.7132339477539, "s": 0.38210806250572205, "u": 93.34815216064453, "v": 0.019212644547224045, "Qu": 0.0692109614610672}, "refrig_evap_outlet": {"T": 277.9771728515625, "P": 4.874439239501953, "x": 0.9998689889907837, "h": 1273.0325927734375, "s": 4.594407081604004, "u": 1147.4276123046875, "v": 0.25797945261001587, "Qu": 0.9980000257492065}, "refrig_cehx_sat_vapor": {"T": 283.48980712890625, "P": 4.874439239501953, "x": 0.9998689889907837, "h": 1276.5631103515625, "s": 4.606287479400635, "u": 1150.49169921875, "v": 0.25863778591156006, "Qu": 1.0}, "refrig_cehx_vapor_outlet": {"T": 310.3429870605469, "P": 4.874439239501953, "x": 0.9998689889907837, "h": 1356.3538818359375, "s": 4.876949787139893, "u": 1211.825927734375, "v": 0.2965017259120941, "Qu": 1.0010000467300415}, "rectifier_liquid": {"T": 313.6952819824219, "P": 15.13962459564209, "x": 0.9578588008880615, "h": 162.40431213378906, "s": 0.6685341000556946, "u": 159.8707733154297, "v": 0.001673446735367179, "Qu": 0.0}, "gen_vapor_formation": {"T": 374.14019775390625, "P": 15.13962459564209, "x": 0.958500862121582, "h": 1515.6514892578125, "s": 4.822197914123535, "u": 1347.39697265625, "v": 0.11113522946834564, "Qu": 1.0}, "abs_vapor_final": {"T": 330.1083068847656, "P": 4.874439239501953, "x": 0.9826090931892395, "h": 1422.488525390625, "s": 5.084283828735352, "u": 1267.553466796875, "v": 0.3178521394729614, "Qu": 1.0}}');</script>
 </div>
 
 </div>
@@ -12817,7 +12787,7 @@ $("svg:first").click(function(){
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">ch</span><span class="o">.</span><span class="n">getVariablesTable</span><span class="p">()</span>
@@ -12833,7 +12803,7 @@ $("svg:first").click(function(){
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[23]:</div>
+<div class="prompt output_prompt">Out[11]:</div>
 
 
 
@@ -12844,24 +12814,24 @@ $("svg:first").click(function(){
 </thead>
 <tbody>
 <tr><td>Q_abs           </td><td>kW    </td><td style="text-align: right;">-182.886      </td></tr>
-<tr><td>Q_gen           </td><td>kW    </td><td style="text-align: right;"> 192.062      </td></tr>
+<tr><td>Q_gen           </td><td>kW    </td><td style="text-align: right;"> 192.048      </td></tr>
 <tr><td>Q_cond          </td><td>kW    </td><td style="text-align: right;">-110.508      </td></tr>
 <tr><td>Q_evap          </td><td>kW    </td><td style="text-align: right;"> 116.323      </td></tr>
-<tr><td>Q_reflux        </td><td>kW    </td><td style="text-align: right;"> -15.7995     </td></tr>
+<tr><td>Q_reflux        </td><td>kW    </td><td style="text-align: right;"> -15.7864     </td></tr>
 <tr><td>Q_shx           </td><td>kW    </td><td style="text-align: right;">  82.873      </td></tr>
 <tr><td>Q_cehx          </td><td>kW    </td><td style="text-align: right;">   8.28166    </td></tr>
 <tr><td>W_pump          </td><td>kW    </td><td style="text-align: right;">   0.809528   </td></tr>
-<tr><td>COP             </td><td>kW/kW </td><td style="text-align: right;">   0.605655   </td></tr>
+<tr><td>COP             </td><td>kW/kW </td><td style="text-align: right;">   0.605697   </td></tr>
 <tr><td>ZeroCheck       </td><td>kW    </td><td style="text-align: right;">   1.97555e-05</td></tr>
 <tr><td>ZeroCheckSHX    </td><td>kW    </td><td style="text-align: right;">   1.02529e-06</td></tr>
 <tr><td>ZeroCheckCEHX   </td><td>kW    </td><td style="text-align: right;">  -2.07808e-05</td></tr>
 <tr><td>Q_gen_rect_combo</td><td>kW    </td><td style="text-align: right;"> 176.262      </td></tr>
 <tr><td>Q_refrig_side   </td><td>kW    </td><td style="text-align: right;">  -5.81476    </td></tr>
-<tr><td>ZeroCheckRect   </td><td>kg/s  </td><td style="text-align: right;">   1.38778e-17</td></tr>
+<tr><td>ZeroCheckRect   </td><td>kg/s  </td><td style="text-align: right;">   0          </td></tr>
 <tr><td>m_rich          </td><td>kg/s  </td><td style="text-align: right;">   0.512845   </td></tr>
 <tr><td>m_weak          </td><td>kg/s  </td><td style="text-align: right;">   0.41345    </td></tr>
-<tr><td>m_gen_vapor     </td><td>kg/s  </td><td style="text-align: right;">   0.101845   </td></tr>
-<tr><td>m_gen_reflux    </td><td>kg/s  </td><td style="text-align: right;">   0.0024502  </td></tr>
+<tr><td>m_gen_vapor     </td><td>kg/s  </td><td style="text-align: right;">   0.101841   </td></tr>
+<tr><td>m_gen_reflux    </td><td>kg/s  </td><td style="text-align: right;">   0.00244687 </td></tr>
 <tr><td>m_refrig        </td><td>kg/s  </td><td style="text-align: right;">   0.0993943  </td></tr>
 </tbody>
 </table>
@@ -13837,7 +13807,7 @@ HiCcc84l5QHCOedcUv8PRjcXSHQ9ZCgAAAAASUVORK5CYII=
 </div>
 </div>
 
-</div></div><div class="fragment">
+</div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -13846,7 +13816,7 @@ HiCcc84l5QHCOedcUv8PRjcXSHQ9ZCgAAAAASUVORK5CYII=
 
 </div>
 </div>
-</div></div><div class="fragment">
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -13855,7 +13825,7 @@ HiCcc84l5QHCOedcUv8PRjcXSHQ9ZCgAAAAASUVORK5CYII=
 
 </div>
 </div>
-</div></div></section></section><section><section>
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -13923,7 +13893,7 @@ C:\Users\user1\Miniconda3\envs\openachp\lib\site-packages\scipy\interpolate\_cub
 </div>
 </div>
 
-</div></div><div class="fragment">
+</div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -13937,7 +13907,7 @@ C:\Users\user1\Miniconda3\envs\openachp\lib\site-packages\scipy\interpolate\_cub
 
 </div>
 </div>
-</div></div></section></section><section><section>
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -14130,10 +14100,10 @@ Note: this won&#39;t work if the versions are incompatible.
 
  
  
-<div id="a5f2721c-fce9-4b15-bb8a-1155edb4750f"></div>
+<div id="c4b3b364-2b91-4bf4-b997-3498ba89061e"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#a5f2721c-fce9-4b15-bb8a-1155edb4750f');
+var element = $('#c4b3b364-2b91-4bf4-b997-3498ba89061e');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "2ac31ad71a3d4edb9fd02d5f6daebd5b", "version_major": 2, "version_minor": 0}
