@@ -30,6 +30,7 @@ and education.
 * [optimize_trials2](optimize_trials2.html)
 * [optimize_trials2_3](optimize_trials2_3.html)
 * [optimize_trials2_5](optimize_trials2_5.html)
+* [Feasibility of ammonia-aqua chiller](Feasibility of ammonia-aqua chiller.html)
 
 ## Set-up for using the library
 
