@@ -31,7 +31,7 @@ and education.
 * [optimize_trials2_3](optimize_trials2_3.html)
 * [optimize_trials2_5](optimize_trials2_5.html)
 * [Feasibility of ammonia-aqua chiller](Feasibility of ammonia-aqua chiller.html)
-* Ammonia-aqua properties [Benchmark 1](benchmark_nh3h2o_laptop.html) | [Benchmark 2](benchmark_nh3h2o_desktop.html)
+* Ammonia-aqua properties [Benchmark 1](benchmark_nh3h2o_laptop.html) &#124; [Benchmark 2](benchmark_nh3h2o_desktop.html)
 
 ## Set-up for using the library
 
