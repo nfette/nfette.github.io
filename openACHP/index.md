@@ -32,6 +32,8 @@ and education.
 * [optimize_trials2_5](optimize_trials2_5.html)
 * [Feasibility of ammonia-aqua chiller](Feasibility of ammonia-aqua chiller.html)
 * Ammonia-aqua properties [Benchmark 1](benchmark_nh3h2o_laptop.html) &#124; [Benchmark 2](benchmark_nh3h2o_desktop.html)
+* [fitting-effectiveness](fitting-effectiveness.html)
+* Finite difference method for [heat exchanger](FDM-HX.html) and [cooling tower](FDM-Evap.html)
 
 ## Set-up for using the library
 
