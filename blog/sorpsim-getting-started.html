@@ -11786,8 +11786,8 @@ div#notebook {
 <h2 id="Prerequisites">Prerequisites<a class="anchor-link" href="#Prerequisites">&#182;</a></h2><p>First determine your goals. To merely use the program, you need only download
 the installer and PDF manual, both available from the <a href="https://github.com/oabdelaziz/SorpSim">GitHub landing page</a>.</p>
 <p>However, if you wish to develop source code (fix bugs or add features),
-you will need the following.</p>
-<ul>
+you will need the following. Note that the larger programs may take 10-20 minutes to install/compile.</p>
+<ol>
 <li>A C++ compiler compatible with all the libraries below<ul>
 <li>I find that VisualStudio 2017 Community Edition is satisfactory, albeit not open source.
 It is free but will require you to create a free account after 30 days.
@@ -11800,8 +11800,6 @@ but can't remember why.</li>
 <li>You might also try GCC (or its Windows ports, MinGW and MSYS), since the program uses Qt and should thus be cross-platform.</li>
 </ul>
 </li>
-<li><a href="http://qwt.sourceforge.net/">Qwt library</a>. Click through to <a href="http://sourceforge.net/projects/qwt/files">http://sourceforge.net/projects/qwt/files</a>.
-Download and extract to a local folder such as <code>C:\qwt-6.1.3\</code>.</li>
 <li>Qt<ul>
 <li>The usual installer should give you the Qt libraries and also an option to install QtCreator,
 an IDE that you should utilize.
@@ -11810,6 +11808,11 @@ manage a project, edit graphical user interfaces, and compile source using Qt.</
 <li>If needed, after installing, optionally set up the debugger per <a href="http://doc.qt.io/qtcreator/creator-debugger-engines.html">http://doc.qt.io/qtcreator/creator-debugger-engines.html</a>.</li>
 </ul>
 </li>
+<li><a href="http://qwt.sourceforge.net/">Qwt library</a>. Click through to <a href="http://sourceforge.net/projects/qwt/files">http://sourceforge.net/projects/qwt/files</a>.
+Download and extract to a local folder such as <code>C:\qwt-6.1.3\</code>. Then,
+read the project documentation (online or in the local <code>doc</code> folder)
+regarding installing. You will have to compile a shared library with your favorite compiler
+(eg. VisualStudio will give you a DLL file, MinGW will give you something).</li>
 <li>Git and optional remote repository<ul>
 <li>Git is used to track your changes to source code (in order to debug, share, and backup your work).
 You can find a standalone program to install, or get it via your favorite package manager
@@ -11824,16 +11827,18 @@ for access to push your local changes to the remote. First look at the repositor
 <li>Finally! Go <a href="https://github.com/oabdelaziz/SorpSim">here</a> and click the Clone button to get instructions.</li>
 </ul>
 </li>
-</ul>
+</ol>
 <p>Now, open QtCreator. Select to open an existing project, and navigate to find
 <code>SorpSim/src/SorpSim.pro</code>, a Qt project file. You are then given options for
 which compilers and platforms to use; just pick a favorite and click to Configure
 (this create a new <code>SorpSim.pro.user</code> file for your local machine).
 The QtCreator then takes on the Editing mode appearance, and you can browse and
 open source files. First, you need to edit SorpSim.pro and make sure that all
-library paths are correct, specifically the Qwt library. (This initial setup could
-be done using CMake, but that requires some labor.) Save changes, and then use menus
-to <code>Build &gt; qmake</code>. Now you are ready to build the project and run it.</p>
+library paths are correct, specifically the Qwt library (include files, sources,
+and .
+(This initial setup could be done using CMake, but that requires some labor.)
+Save changes, and then use menus to <code>Build &gt; qmake</code>, which generates a Makefile
+for your compiler. Now you are ready to build the project and run it.</p>
 
 </div>
 </div>
@@ -11847,6 +11852,82 @@ to <code>Build &gt; qmake</code>. Now you are ready to build the project and run
 efforts. The developers may choose to synchronize changes into one main
 branch, but it is good to research which branch is most up-to-date and
 which developers are most active. Note: you can and likely should talk to them!</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Building-sources">Building sources<a class="anchor-link" href="#Building-sources">&#182;</a></h2><h3 id="Vcvars">Vcvars<a class="anchor-link" href="#Vcvars">&#182;</a></h3><p>In the past I had difficulty compiling code (namely the CoolProp wrapper for Python) using my VS compiler from command line. This may have something to do with the Universal CRT <a href="https://social.msdn.microsoft.com/Forums/vstudio/en-US/0f580a73-6f11-4aa6-abbe-6bf1438734c2/standard-files-stddefh-stringh-missing-in-visual-studio-2015-rc?forum=vclanguage">as claimed by MS</a>, or may just be a <a href="https://developercommunity.visualstudio.com/content/problem/22031/unusable-vc-build-tools-2015-installed-with-vs2017.html">bug of VS</a>. In fact you need to follow those directions in order to <em>install a working version</em> of VS. Furthermore, I found that executing a couple lines was necessary to include the VS command line tools correctly. The script is <a href="https://gist.github.com/nfette/c847ebfc1faeeb33d8f0d417ee0b06ea">here</a> and requires you to set the arguments on the first Call statement based on your desired platform; see <a href="https://docs.microsoft.com/en-us/cpp/build/building-on-the-command-line">here</a>. You could try that, or try launching QtCreator via the command line from within a "Native Tools Command Prompt" of your choosing. With the latter approach, you need to include manually into the Path: Qt bin and Jom.</p>
+<h3 id="Qwt">Qwt<a class="anchor-link" href="#Qwt">&#182;</a></h3><p>As the file <code>qwt/INSTALL</code> indicates, you need to read
+<a href="http://qwt.sourceforge.net/qwtinstall.html">the documentation</a>.
+(Basic prequisites: open a command line, make sure that Qt
+and your compiler tools are included in Path environment variable, etc.)
+To help compile faster, try multithreaded compile. Per the Qwt documentation,
+for MinGW, make takes argument <code>-j</code>, as in <code>-j4</code> for 4 cores. For VS, the
+make tool is Nmake, which has no such option; see <a href="https://docs.microsoft.com/en-us/cpp/build/nmake-options">Nmake options</a>.
+On the other hand, the compiler does understand multithreading:
+see <a href="https://docs.microsoft.com/en-us/cpp/build/reference/mp-build-with-multiple-processes">here</a>
+and <a href="https://stackoverflow.com/questions/601970/how-do-i-utilise-all-the-cores-for-nmake">here</a>.
+The conclusion is that you need a replacement for nmake called <a href="https://wiki.qt.io/Jom">JOM</a>,
+which is conveniently provided by the Qt folks, and automatically used by QtCreator
+for VS projects. How about that?</p>
+<p>Note that the Qwt project contains two targets to build: the library, and
+also a plugin for QtCreator, in the <code>qwt/src/designer</code> directory.
+Project settings are in the file <code>qwtconfig.pri</code> including a switch
+to control whether and how the plugin is compiled.</p>
+<p>I built Qwt by opening the project file in QtCreator. By default, QtCreator makes a separate build directory to avoid polluting your source folder; then you will have to locate the include files and libraries for use by SorpSim. Also note that in the IDE, you can pass arguments to your Make program by entering the Projects mode (Ctrl-5) and expanding <code>Build Steps &gt; Make</code>.</p>
+<p>Anyway, compiling took a long time.</p>
+<table>
+<thead><tr>
+<th>Compiler</th>
+<th>Flags</th>
+<th>Elapsed time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MinGW-32</td>
+<td>None</td>
+<td>29:31</td>
+</tr>
+<tr>
+<td>VS 2017</td>
+<td>jom -j4</td>
+<td>About 3 minutes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="SorpSim">SorpSim<a class="anchor-link" href="#SorpSim">&#182;</a></h3><p>Please note above hints for multithreaded compile. Once again, I opened the project file in QtCreator and compiled that way.</p>
+<p>Here are the typical results.</p>
+<table>
+<thead><tr>
+<th>Compiler</th>
+<th>Lib versions</th>
+<th>Computer</th>
+<th>Extra flags</th>
+<th>Compile time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MinGW 32-bit</td>
+<td>Qt 5.9.3, Qwt 6.1.3, SorpSim 4751bf9</td>
+<td>8x 3.6 GHz, 8 GB</td>
+<td>None</td>
+<td>Pending...</td>
+</tr>
+<tr>
+<td>VS 2017 64-bit</td>
+<td>Qt 5.9.3, Qwt 6.1.3, SorpSim 4751bf9</td>
+<td>8x 3.6 GHz, 8 GB</td>
+<td>None</td>
+<td>Unable to compile with 36 errors</td>
+</tr>
+</tbody>
+</table>
 
 </div>
 </div>
