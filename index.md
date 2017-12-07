@@ -16,3 +16,7 @@ To write useful code and share it ...
     * Status - reads CR23x at 1 Hz, does I-V curve traces with Kiethley, and automates control via Arduino. Documentation needed.
     * [Repo](https://github.com/nfette/thermoCellCode)
     * [Documentation](https://nfette.github.io/thermoCellCode)
+
+* Notes
+    * [Installing and Developing with SorpSim](/blog/sorpsim-getting-started.html)
+	
