@@ -11860,7 +11860,7 @@ which developers are most active. Note: you can and likely should talk to them!<
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Building-sources">Building sources<a class="anchor-link" href="#Building-sources">&#182;</a></h2><h3 id="Vcvars">Vcvars<a class="anchor-link" href="#Vcvars">&#182;</a></h3><p>In the past I had difficulty compiling code (namely the CoolProp wrapper for Python) using my VS compiler from command line. This may have something to do with the Universal CRT <a href="https://social.msdn.microsoft.com/Forums/vstudio/en-US/0f580a73-6f11-4aa6-abbe-6bf1438734c2/standard-files-stddefh-stringh-missing-in-visual-studio-2015-rc?forum=vclanguage">as claimed by MS</a>, or may just be a <a href="https://developercommunity.visualstudio.com/content/problem/22031/unusable-vc-build-tools-2015-installed-with-vs2017.html">bug of VS</a>. In fact you need to follow those directions in order to <em>install a working version</em> of VS. Furthermore, I found that executing a couple lines was necessary to include the VS command line tools correctly. The script is <a href="https://gist.github.com/nfette/c847ebfc1faeeb33d8f0d417ee0b06ea">here</a> and requires you to set the arguments on the first Call statement based on your desired platform; see <a href="https://docs.microsoft.com/en-us/cpp/build/building-on-the-command-line">here</a>. You could try that, or try launching QtCreator via the command line from within a "Native Tools Command Prompt" of your choosing. With the latter approach, you need to include manually into the Path: Qt bin and Jom.</p>
+<h2 id="Building-sources">Building sources<a class="anchor-link" href="#Building-sources">&#182;</a></h2><h3 id="Vcvars">Vcvars<a class="anchor-link" href="#Vcvars">&#182;</a></h3><p>In the past I had difficulty compiling code (namely the CoolProp wrapper for Python) using my VS compiler from command line. This may have something to do with the Universal CRT <a href="https://social.msdn.microsoft.com/Forums/vstudio/en-US/0f580a73-6f11-4aa6-abbe-6bf1438734c2/standard-files-stddefh-stringh-missing-in-visual-studio-2015-rc?forum=vclanguage">as claimed by MS</a>, or may just be a <a href="https://developercommunity.visualstudio.com/content/problem/22031/unusable-vc-build-tools-2015-installed-with-vs2017.html">bug of VS</a>. In fact you need to follow those directions in order to <em>install a working version</em> of VS. Furthermore, in Windows 10, I found that executing a couple lines was necessary to include the VS command line tools correctly. The script is <a href="https://gist.github.com/nfette/c847ebfc1faeeb33d8f0d417ee0b06ea">here</a> and requires you to set the arguments on the first Call statement based on your desired platform; see <a href="https://docs.microsoft.com/en-us/cpp/build/building-on-the-command-line">here</a>. You could try that, or try launching QtCreator via the command line from within a "Native Tools Command Prompt" of your choosing. With the latter approach, you need to include manually into the Path: Qt bin and Jom.  <strong>Ugh, this needs re-writing.</strong></p>
 <h3 id="Qwt">Qwt<a class="anchor-link" href="#Qwt">&#182;</a></h3><p>As the file <code>qwt/INSTALL</code> indicates, you need to read
 <a href="http://qwt.sourceforge.net/qwtinstall.html">the documentation</a>.
 (Basic prequisites: open a command line, make sure that Qt
@@ -11889,18 +11889,18 @@ to control whether and how the plugin is compiled.</p>
 </thead>
 <tbody>
 <tr>
-<td>MinGW-32</td>
+<td>MinGW 32-bit</td>
 <td>None</td>
 <td>29:31</td>
 </tr>
 <tr>
-<td>VS 2017</td>
+<td>MSVC 2017 64-bit</td>
 <td>jom -j4</td>
-<td>About 3 minutes</td>
+<td>03:15</td>
 </tr>
 </tbody>
 </table>
-<h3 id="SorpSim">SorpSim<a class="anchor-link" href="#SorpSim">&#182;</a></h3><p>Please note above hints for multithreaded compile. Once again, I opened the project file in QtCreator and compiled that way.</p>
+<h3 id="SorpSim">SorpSim<a class="anchor-link" href="#SorpSim">&#182;</a></h3><p>Please note above hints for multithreaded compile. Once again, I opened the project file in QtCreator and compiled that way. Oh, and it looks like jom is now using all my cores without my asking.</p>
 <p>Here are the typical results.</p>
 <table>
 <thead><tr>
@@ -11920,14 +11920,15 @@ to control whether and how the plugin is compiled.</p>
 <td>Pending...</td>
 </tr>
 <tr>
-<td>VS 2017 64-bit</td>
+<td>MSVC 2017 64-bit</td>
 <td>Qt 5.9.3, Qwt 6.1.3, SorpSim 4751bf9</td>
 <td>8x 3.6 GHz, 8 GB</td>
 <td>None</td>
-<td>Unable to compile with 36 errors</td>
+<td>00:58</td>
 </tr>
 </tbody>
 </table>
+<p>So, wow, that's even faster than compiling qwt.</p>
 
 </div>
 </div>
